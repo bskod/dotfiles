@@ -9,6 +9,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'kien/ctrlp.vim'
 Plug 'rking/ag.vim'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'bbatsov/rubocop'
 
 " ColorSchemas
 Plug 'blueshirts/darcula'
