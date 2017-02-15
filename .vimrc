@@ -9,11 +9,17 @@ Plug 'airblade/vim-gitgutter'
 Plug 'kien/ctrlp.vim'
 Plug 'rking/ag.vim'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'bbatsov/rubocop'
+Plug 'ngmy/vim-rubocop'
+Plug 'elixir-lang/vim-elixir'
+Plug 'tpope/vim-rails'
+Plug 'mattn/emmet-vim'
+Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " ColorSchemas
 Plug 'blueshirts/darcula'
 Plug 'morhetz/gruvbox'
+Plug 'dracula/vim'
 
 call plug#end()
 
@@ -26,8 +32,9 @@ autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
 
 syntax on
-colorscheme gruvbox
+colorscheme dracula 
 set background=dark
+let g:airline_theme='wombat'
 
 set hlsearch
 set incsearch
