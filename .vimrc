@@ -1,61 +1,64 @@
-call plug#begin('~/.vim/plugged')
-
-" On-demand loading
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'valloric/youcompleteme'
-Plug 'jiangmiao/auto-pairs'
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-Plug 'kien/ctrlp.vim'
-Plug 'rking/ag.vim'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'ngmy/vim-rubocop'
-Plug 'elixir-lang/vim-elixir'
-Plug 'tpope/vim-rails'
-Plug 'mattn/emmet-vim'
-Plug 'bling/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
-" ColorSchemas
-Plug 'blueshirts/darcula'
-Plug 'morhetz/gruvbox'
-Plug 'dracula/vim'
-
-call plug#end()
-
+syntax enable
+set encoding=utf-8
 set number
+
+set incsearch
+set hlsearch
+set ignorecase
+set smartcase
+
+set termencoding=utf8
+set nocompatible
+set ruler
+set autoindent
 set expandtab
+set shiftwidth=2
+set softtabstop=2
 set tabstop=2
+set smartindent
+set showmatch
 
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
 
-syntax on
-colorscheme dracula 
-set background=dark
-let g:airline_theme='wombat'
+set nocompatible
+filetype off
 
-set hlsearch
-set incsearch
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-"mappings
-map <C-n> :NERDTreeToggle<CR> 
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'git://git.wincent.com/command-t.git'
+Plugin 'dracula/vim', { 'name': 'dracula' }
+Plugin 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plugin 'vim-airline/vim-airline'
+Plugin 'kien/ctrlp.vim'
+Plugin 'valloric/youcompleteme'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'pangloss/vim-javascript'
+Plugin 'othree/javascript-libraries-syntax.vim'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'scrooloose/syntastic'
+Plugin 'lervag/vimtex'
+Plugin 'taglist.vim'
+Plugin 'stanangeloff/php.vim'
+Plug 'rking/ag.vim'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'ngmy/vim-rubocop'
+Plug 'tpope/vim-rails'
+Plug 'mattn/emmet-vim'
+Plug 'vim-airline/vim-airline-themes'
+
+call vundle#end()
+filetype plugin indent on
+
+colorscheme dracula
+
+map <C-n> :NERDTreeToggle<CR>
 map <silent> <C-h> :call WinMove('h')<CR>
 map <silent> <C-j> :call WinMove('j')<CR>
 map <silent> <C-k> :call WinMove('k')<CR>
 map <silent> <C-l> :call WinMove('l')<CR>
-
-function! WinMove(key)
-        let t:curwin = winnr()
-        exec "wincmd ".a:key
-        if (t:curwin == winnr())
-                if (match(a:key,'[jk]'))
-                        wincmd v
-                else
-                        wincmd s
-                endif
-                exec "wincmd ".a:key
-        endif
-endfunction
-
