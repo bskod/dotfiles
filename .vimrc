@@ -45,12 +45,12 @@ Plugin 'scrooloose/syntastic'
 Plugin 'lervag/vimtex'
 Plugin 'taglist.vim'
 Plugin 'stanangeloff/php.vim'
-Plug 'rking/ag.vim'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'ngmy/vim-rubocop'
-Plug 'tpope/vim-rails'
-Plug 'mattn/emmet-vim'
-Plug 'vim-airline/vim-airline-themes'
+Plugin 'rking/ag.vim'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'ngmy/vim-rubocop'
+Plugin 'tpope/vim-rails'
+Plugin 'mattn/emmet-vim'
+Plugin 'vim-airline/vim-airline-themes'
 
 call vundle#end()
 filetype plugin indent on
